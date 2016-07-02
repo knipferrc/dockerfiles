@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
     nano \
     vim \
     python3 \
-    build-essential
+    build-essential \
+    tar
 
 RUN locale-gen en_US.UTF-8
 
@@ -21,3 +22,13 @@ RUN apt-get install nodejs -y
 RUN curl https://install.meteor.com/ | sh
 
 RUN wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+RUN curl -O https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz
+
+RUN tar -xvf go1.6.2.linux-amd64.tar.gz
+
+RUN mv go /usr/local
+
+ENV PATH=$PATH:/usr/local/go/bin
+
+RUN rm -r go1.6.2.linux-amd64.tar.gz
