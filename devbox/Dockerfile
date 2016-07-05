@@ -32,3 +32,9 @@ RUN mv go /usr/local
 ENV PATH=$PATH:/usr/local/go/bin
 
 RUN rm -r go1.6.2.linux-amd64.tar.gz
+
+RUN adduser --disabled-password --gecos '' devbox
+
+USER devbox
+
+WORKDIR /home/devbox
