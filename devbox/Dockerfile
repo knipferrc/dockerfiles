@@ -32,3 +32,6 @@ RUN adduser --disabled-password --gecos '' devbox
 USER devbox
 
 WORKDIR /home/devbox
+
+RUN meteor --version \
+  && heroku version
