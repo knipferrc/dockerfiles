@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM ubuntu:latest
 
 MAINTAINER knipferrc <knipferrc@gmail.com>
 
