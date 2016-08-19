@@ -26,7 +26,8 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - \
   && mv go /usr/local \
   && rm -r go1.7.linux-amd64.tar.gz
 
-RUN npm i -g create-react-app
+RUN npm i -g create-react-app \
+  && npm i -g firebase-tools
 
 ENV PATH=$PATH:/usr/local/go/bin
 
